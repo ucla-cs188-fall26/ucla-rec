@@ -1,0 +1,77 @@
+{
+  "api": "http://localhost:8000",
+  "timezone": "America/Los_Angeles",
+  "facilities": [
+    {
+      "id": "wooden-center",
+      "name": "John Wooden Center",
+      "type": "gym",
+      "venues": [
+        "JWC"
+      ],
+      "sources": [
+        {
+          "id": "connect2-wooden",
+          "type": "connect2_counts",
+          "url": "https://www.connect2mycloud.com/Widgets/Data/locationCount?type=bar&facility=802&key=73829a91-48cb-4b7b-bd0b-8cf4134c04cd"
+        }
+      ]
+    },
+    {
+      "id": "bfit",
+      "name": "BFit",
+      "type": "fitness_center",
+      "venues": [],
+      "sources": [
+        {
+          "id": "connect2-803",
+          "type": "connect2_counts",
+          "url": "https://www.connect2mycloud.com/Widgets/Data/locationCount?type=bar&facility=803&key=73829a91-48cb-4b7b-bd0b-8cf4134c04cd"
+        }
+      ]
+    },
+    {
+      "id": "hitch-courts",
+      "name": "Hitch Basketball Courts",
+      "type": "court",
+      "venues": [],
+      "sources": []
+    },
+    {
+      "id": "sunset-rec",
+      "name": "Sunset Rec",
+      "type": "gym",
+      "venues": [
+        "SCRC"
+      ],
+      "sources": []
+    },
+    {
+      "id": "pools",
+      "name": "Pools",
+      "type": "pool",
+      "venues": [
+        "Park Pool",
+        "Dirks Pool",
+        "Family Pool",
+        "North Pool",
+        "SAC Pool",
+        "Student Activities Center Pool"
+      ],
+      "sources": []
+    }
+  ],
+  "sources": [
+    {
+      "id": "ucla-reserve-events",
+      "type": "events",
+      "url": "https://reserve.recreation.ucla.edu/BrowseEvents.aspx",
+      "days": 7
+    },
+    {
+      "id": "pool-calendar",
+      "type": "pool_schedule",
+      "pdf_file": "pool-schedule.pdf"
+    }
+  ]
+}

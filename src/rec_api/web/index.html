@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UCLA Recreation: live facility status</title>
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <div id="demo-banner" class="demo-banner" hidden>Preview with sample data. Nothing here is live.</div>
+  <header class="top">
+    <a class="brand" href="#home" aria-label="UCLA Recreation live facility status, home">
+      <span class="brand-mark">UCLA Recreation</span><span class="brand-name">Live facility status</span>
+    </a>
+    <span class="top-note">Crowd levels and closures</span>
+  </header>
+  <div class="layout">
+    <nav id="nav" class="nav" aria-label="Facilities"></nav>
+    <main id="main" class="main" aria-live="polite"></main>
+    <aside id="events" class="events" aria-label="Upcoming events and closures"></aside>
+  </div>
+  <footer class="foot">Counts come from UCLA Recreation&rsquo;s live facility page. Closures and events come from UCLA Recreation&rsquo;s reservation calendar. Community reports come from UCLA students and staff.</footer>
+  <div id="modal-root"></div>
+  <script src="app.js"></script>
+</body>
+</html>

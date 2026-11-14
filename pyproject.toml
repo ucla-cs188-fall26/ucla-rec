@@ -1,0 +1,36 @@
+[project]
+name = "ucla-rec-api"
+version = "0.1.0"
+description = "Normalization API for UCLA Rec facility, event and activity data"
+requires-python = ">=3.11"
+dependencies = [
+    "beautifulsoup4>=4.12",
+    "pydantic>=2.5",
+    "fastapi>=0.110",
+    "sqlalchemy>=2.0",
+    "uvicorn>=0.27",
+    "tzdata>=2024.1",  # Windows has no system time zone database
+]
+
+[project.optional-dependencies]
+scrape = ["playwright>=1.40", "pdfplumber>=0.11"]
+dev = ["pytest>=8", "playwright>=1.40", "pdfplumber>=0.11", "httpx>=0.27"]
+
+[project.scripts]
+rec-scrape = "rec_scrapers.cli:main"
+rec-scrape-events = "rec_scrapers.events_cli:main"
+rec-run = "rec_scrapers.run:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+rec_api = ["web/*"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

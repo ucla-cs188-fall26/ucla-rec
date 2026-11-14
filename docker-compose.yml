@@ -1,0 +1,22 @@
+services:
+  api:
+    build: { context: ., target: api }
+    ports: ["8000:8000"]
+    # To email real sign-in codes, add an `environment:` block here with
+    # REC_SMTP_HOST, REC_SMTP_PORT, REC_SMTP_USER, REC_SMTP_PASSWORD, REC_SMTP_FROM.
+    volumes: ["recdata:/data"]
+    restart: unless-stopped
+
+  scraper:
+    build: { context: ., target: scraper }
+    depends_on:
+      api: { condition: service_healthy }
+    environment:
+      SCRAPE_EVERY_SECONDS: ${SCRAPE_EVERY_SECONDS:-300}
+    # The project folder, read-only: sources.json and pool-schedule.pdf are read from it
+    # on every pass, so a new PDF is picked up without rebuilding.
+    volumes: ["./:/config:ro"]
+    restart: unless-stopped
+
+volumes:
+  recdata:

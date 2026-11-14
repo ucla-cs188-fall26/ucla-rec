@@ -1,0 +1,19 @@
+Metadata-Version: 2.4
+Name: ucla-rec-api
+Version: 0.1.0
+Summary: Normalization API for UCLA Rec facility, event and activity data
+Requires-Python: >=3.11
+Requires-Dist: beautifulsoup4>=4.12
+Requires-Dist: pydantic>=2.5
+Requires-Dist: fastapi>=0.110
+Requires-Dist: sqlalchemy>=2.0
+Requires-Dist: uvicorn>=0.27
+Requires-Dist: tzdata>=2024.1
+Provides-Extra: scrape
+Requires-Dist: playwright>=1.40; extra == "scrape"
+Requires-Dist: pdfplumber>=0.11; extra == "scrape"
+Provides-Extra: dev
+Requires-Dist: pytest>=8; extra == "dev"
+Requires-Dist: playwright>=1.40; extra == "dev"
+Requires-Dist: pdfplumber>=0.11; extra == "dev"
+Requires-Dist: httpx>=0.27; extra == "dev"

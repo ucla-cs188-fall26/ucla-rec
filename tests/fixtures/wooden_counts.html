@@ -1,0 +1,462 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <title>Connect2</title>
+    <link href="/Content/Styles/Widgets/bootstrap.css" rel="stylesheet">
+    <link href="/Content/Styles/Widgets/jquery.barCharts.css" rel="stylesheet">
+
+    
+        <link href="/Content/Styles/Widgets/style.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script src="/Scripts/bootstrap.js"></script>
+    <script src="/Scripts/jquery.barChart.js"></script>
+    <script src="/Scripts/jquery.circlechart_v1.0.0.js"></script>
+    <script src="/Scripts/jquery.easing.min.js"></script>
+</head>
+<body cz-shortcut-listen="true">
+    <div id="container" class="container">
+        <div class="row">
+            <h2 class="heading-text" tabindex="0">
+                <center>Live Facility Counts</center>
+            </h2>
+        </div>
+        <hr>
+        <div class="row">
+            <form method="POST" class="form-inline" id="frmWidget">
+                <div class="col-xl-12 col-sm-8 col-md-8">
+                    <div class="col-xl-12 col-sm-8 col-md-8" id="IndivisualFacility">
+                        <label for="key">Facility Name:</label>
+                        <span id="facilityName">John Wooden Center - FITWELL</span>
+                    </div>
+                    <div class="form-group form-inline col-xl-12 col-sm-12 col-md-12" id="FacilityDropdown" style="display: none;">
+                        <label for="facility" class="selectFacility">Select Facility:</label>
+                        <input type="hidden" name="key" id="key">
+                        <input type="hidden" name="type" id="type">
+                        <select class="form-control" id="facility" name="facility">
+                            <option value="All" selected="">All</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-xl-12 col-sm-4 col-md-4">
+                    <div class="form-group form-inline col-xl-12 col-sm-12 col-md-12">
+                        <button type="button" class="btn btn-sm btn-primary pull-right" id="btnSubmit" name="btnSubmit" style="display: none;">Refresh Count</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        <hr>
+        <div class="row" style="display:block">
+                <div class="col-sm-12 col-md-12">
+                    <div class="panel-group">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" tabindex="0">
+                                Location Count (Bar Chart)
+                            </div>
+                            <div class="panel-body">
+                                <div id="chartContainer"><div tabindex="0" class="barChart" style="width:90%;">
+                            Collins Court <br>
+                            <span style="color:green">(Open)</span><br>
+                            Last Count: 35 <br>
+                            Updated: 11/11/2026 05:31 PM
+                            <div class="barChart__row" data-value="1.9358407079646016">
+                                <span class="barChart__value">
+                                    2%
+                                </span>
+                                <span class="barChart__bar" style="background: rgb(239, 239, 239);">
+                                    <span class="barChart__barFill" style="background: #2A5B84; width: 1.9358407079646016%;"></span>
+                                </span>
+                            </div>
+                        </div><div tabindex="0" class="barChart" style="width:90%;">
+                            Pardee Gym <br>
+                            <span style="color:green">(Open)</span><br>
+                            Last Count: 16 <br>
+                            Updated: 11/11/2026 05:31 PM
+                            <div class="barChart__row" data-value="32">
+                                <span class="barChart__value">
+                                    32%
+                                </span>
+                                <span class="barChart__bar" style="background: rgb(239, 239, 239);">
+                                    <span class="barChart__barFill" style="background: #2A5B84; width: 32%;"></span>
+                                </span>
+                            </div>
+                        </div><div tabindex="0" class="barChart" style="width:90%;">
+                            Cardio Zone <br>
+                            <span style="color:green">(Open)</span><br>
+                            Last Count: 30 <br>
+                            Updated: 11/11/2026 05:31 PM
+                            <div class="barChart__row" data-value="50">
+                                <span class="barChart__value">
+                                    50%
+                                </span>
+                                <span class="barChart__bar" style="background: rgb(239, 239, 239);">
+                                    <span class="barChart__barFill" style="background: #2A5B84; width: 50%;"></span>
+                                </span>
+                            </div>
+                        </div><div tabindex="0" class="barChart" style="width:90%;">
+                            Free Weight Zone <br>
+                            <span style="color:green">(Open)</span><br>
+                            Last Count: 41 <br>
+                            Updated: 11/11/2026 05:31 PM
+                            <div class="barChart__row" data-value="63.07692307692307">
+                                <span class="barChart__value">
+                                    63%
+                                </span>
+                                <span class="barChart__bar" style="background: rgb(239, 239, 239);">
+                                    <span class="barChart__barFill" style="background: #ffc90e; width: 63.07692307692307%;"></span>
+                                </span>
+                            </div>
+                        </div><div tabindex="0" class="barChart" style="width:90%;">
+                            Functional Training Zone <br>
+                            <span style="color:green">(Open)</span><br>
+                            Last Count: 17 <br>
+                            Updated: 11/11/2026 05:31 PM
+                            <div class="barChart__row" data-value="42.5">
+                                <span class="barChart__value">
+                                    43%
+                                </span>
+                                <span class="barChart__bar" style="background: rgb(239, 239, 239);">
+                                    <span class="barChart__barFill" style="background: #2A5B84; width: 42.5%;"></span>
+                                </span>
+                            </div>
+                        </div><div tabindex="0" class="barChart" style="width:90%;">
+                            Advanced Circuit Zone <br>
+                            <span style="color:green">(Open)</span><br>
+                            Last Count: 36 <br>
+                            Updated: 11/11/2026 05:31 PM
+                            <div class="barChart__row" data-value="80">
+                                <span class="barChart__value">
+                                    80%
+                                </span>
+                                <span class="barChart__bar" style="background: rgb(239, 239, 239);">
+                                    <span class="barChart__barFill" style="background: #ffc90e; width: 80%;"></span>
+                                </span>
+                            </div>
+                        </div><div tabindex="0" class="barChart" style="width:90%;">
+                            Novice Circuit Zone <br>
+                            <span style="color:green">(Open)</span><br>
+                            Last Count: 16 <br>
+                            Updated: 11/11/2026 05:31 PM
+                            <div class="barChart__row" data-value="80">
+                                <span class="barChart__value">
+                                    80%
+                                </span>
+                                <span class="barChart__bar" style="background: rgb(239, 239, 239);">
+                                    <span class="barChart__barFill" style="background: #ffc90e; width: 80%;"></span>
+                                </span>
+                            </div>
+                        </div><div tabindex="0" class="barChart" style="width:90%;">
+                            The Pit <br>
+                            <span style="color:green">(Open)</span><br>
+                            Last Count: 36 <br>
+                            Updated: 11/11/2026 05:31 PM
+                            <div class="barChart__row" data-value="72">
+                                <span class="barChart__value">
+                                    72%
+                                </span>
+                                <span class="barChart__bar" style="background: rgb(239, 239, 239);">
+                                    <span class="barChart__barFill" style="background: #ffc90e; width: 72%;"></span>
+                                </span>
+                            </div>
+                        </div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <center>Powered by <a href="http://www.connect2concepts.com/" target="_blank">Connect2Concepts</a></center>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            jQuery('.barChart').barChart({
+                easing: 'easeOutQuart'
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            var facilityKey = getUrlQueryValue()["facility"];
+            var allFacilityData = [];
+            var countLocations = null; // Serialized data from server
+            var selectedFacilityId = localStorage.getItem('selectedFacilityId') || 'All';
+
+
+            var keyValue = getUrlQueryValue()["key"];
+            var serviceUrl = "https://goboardapi.azurewebsites.net/api/FacilityCount/GetCountsByAccount?AccountAPIKey=" + keyValue;
+
+            $.ajax({
+                url: serviceUrl,
+                type: 'GET',
+                success: function (data) {
+                    allFacilityData = manageAPIData(keyValue, data);
+
+                    if (facilityKey != 'undefined' && facilityKey != '' && facilityKey != null) {
+                        $('#IndivisualFacility').css('display', '');
+                        $('#FacilityDropdown').css('display', 'none');
+                        $('#btnSubmit').hide()
+                        const explodeStr = facilityKey.split("-");
+
+                        var facilityId = explodeStr[explodeStr.length - 1];
+                        var facility = allFacilityData.find(x => x.FacilityId === Number(facilityId));
+                        $('#facilityName').text(facility.FacilityName);
+
+                        storeFacilityData(allFacilityData, facilityId);
+
+                    }
+                    else {
+                        $('#IndivisualFacility').css('display', 'none');
+                        $('#FacilityDropdown').css('display', '');
+                        $('#btnSubmit').show()
+                        // Clear existing options and add "All" as default
+                        $('#facility').find('option').not(':first').remove();
+                        storeFacilityData(allFacilityData, selectedFacilityId);
+
+                        const uniqueFacilities = data.filter((value, index, self) =>
+                            index === self.findIndex((t) => (
+                                t.FacilityId === value.FacilityId
+                            ))
+                        );
+
+                        // Populate the dropdown with the filtered unique facility data
+                        uniqueFacilities.forEach(function (facility) {
+                            var isSelected = (facility.FacilityId.toString() === selectedFacilityId) ? 'selected' : '';
+                            $('#facility').append(
+                                $('<option>', {
+                                    value: facility.FacilityId,
+                                    text: facility.FacilityName,
+                                    selected: isSelected
+                                })
+                            );
+                        });
+                        // Ensure "All" is selected if no facility is selected initially
+                        if (!selectedFacilityId || selectedFacilityId === "All") {
+                            $('#facility').val("All");
+                            storeFacilityData(allFacilityData, "All");
+                        } else {
+                            $('#facility').val(selectedFacilityId);
+                            storeFacilityData(allFacilityData, selectedFacilityId);
+                        }
+                    }
+                },
+                error: function () {
+                    alert('Error loading facility data');
+                }
+            });
+
+
+            // When the facility changes, capture the selected value
+            $('#facility').change(function () {
+                selectedFacilityId = $(this).val();
+                storeFacilityData(allFacilityData, selectedFacilityId); // Filter and display data based on selection
+                // localStorage.setItem('selectedFacilityId', selectedFacilityId);
+            });
+
+            // Function to render the chart based on the data
+            function storeFacilityData(data, selectedFacilityId) {
+                var chartType = getQueryParam("type") || "bar"; // Default to "bar" if not specified
+                var chartContainer = $('#chartContainer');
+                chartContainer.empty(); // Clear any existing charts
+
+                // If "All" is selected, display all data
+                var filteredData = (selectedFacilityId === "All")
+                    ? data
+                    : data.filter(facility => String(facility.FacilityId) === String(selectedFacilityId)); // Ensure comparison is done as strings
+
+                // Loop through the filtered data and render chart
+                filteredData.forEach(function (countLocation) {
+                    var lastCount = countLocation.LastCount;
+                    const date = new Date(countLocation.LastUpdatedDateAndTime);
+
+                    // Extract date components
+                    const month = (date.getMonth() + 1).toString().padStart(2, '0');  // Get month (01-12)
+                    const day = date.getDate().toString().padStart(2, '0');  // Get day (01-31)
+                    const year = date.getFullYear();  // Get full year (e.g., 2025)
+
+                    // Extract time components
+                    let hours = date.getHours();
+                    const minutes = date.getMinutes();
+
+                    // Determine AM or PM
+                    const ampm = hours >= 12 ? 'PM' : 'AM';
+
+                    // Convert to 12-hour format
+                    hours = hours % 12;
+                    hours = hours ? hours : 12;  // the hour '0' should be '12'
+
+                    // Format time with leading zero if needed
+                    const formattedTime = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')} ${ampm}`;
+
+                    // Combine date and time
+                    const formattedDateTime = `${month}/${day}/${year} ${formattedTime}`;
+                    var lastUpdated = formattedDateTime; // Parse date
+                    var capacity = countLocation.TotalCapacity;
+                    var locationClosed = false;
+                    var percentageCapacity = 0;
+                    var isClosed = "";
+                    var dispPercentageCapacity = 0;
+                    // Check if the location is closed
+                    if (countLocation.IsClosed) {
+                        isClosed = "<span style=\"color:#B30000\">(Closed)</span>";
+                        dispPercentageCapacity =percentageCapacity = 0;
+                        colour = "#FFF200";
+                        locationClosed = true;
+                    } else {
+                        isClosed = "<span style=\"color:green\">(Open)</span>";
+                        percentageCapacity = (capacity) ? ((lastCount / capacity) * 100) : 0;
+
+                        dispPercentageCapacity = percentageCapacity
+
+                        if (countLocation.CountCapacityColorEnabled)
+                        {
+                            if (countLocation.MinCapacityRange >= percentageCapacity) {
+                                colour = "#2A5B84";
+                            }
+                            if (countLocation.MinCapacityRange <= percentageCapacity) {
+                                colour = countLocation.MinColor;
+                            }
+
+                            if (countLocation.MaxCapacityRange <= percentageCapacity) {
+                                colour = countLocation.MaxColor;
+                            }
+                        }
+                        else {
+                            if (percentageCapacity <= 40) {
+                                colour = "#2A5B84";
+                            }
+                            if (percentageCapacity >= 40) {
+                                colour = "#FFF200";
+                            }
+                            if (percentageCapacity >= 90) {
+                                colour = "#ED1C24";
+                            }
+                        }
+
+                        if (percentageCapacity > 100) {
+                            percentageCapacity = 100;
+                        }
+                    }
+
+                    // Render the chart (circle or bar)
+                    if (chartType === "circle") {
+                        chartContainer.append(
+                            `<div class="col-md-3 col-sm-6">
+                                <center>
+                                    <div tabindex="0" class="circleChart" data-fcolor="${colour}" data-lastcount="${dispPercentageCapacity}" data-percent="${percentageCapacity}" data-isclosed="${locationClosed}"></div>
+                                    <div tabindex="0" style="text-align:center;">
+                                        ${countLocation.LocationName} <br />
+                                        ${isClosed}<br/>
+                                        Last Count: ${lastCount} <br />
+                                        Updated: ${lastUpdated.toLocaleString()}
+                                    </div>
+                                </center>
+                            </div>`
+
+                        );
+                    } else {
+                        chartContainer.append(
+                            `<div tabindex="0" class="barChart" style="width:90%;">
+                            ${countLocation.LocationName} <br />
+                            ${isClosed}<br/>
+                            Last Count: ${lastCount} <br />
+                            Updated: ${lastUpdated.toLocaleString()}
+                            <div class="barChart__row" data-value="${percentageCapacity}">
+                                <span class="barChart__value">
+                                    ${countLocation.IsClosed ? "NA" : Math.round(dispPercentageCapacity) + "%"}
+                                </span>
+                                <span class="barChart__bar" style="background: rgb(239, 239, 239);">
+                                    <span class="barChart__barFill" style="background: ${colour}; width: ${dispPercentageCapacity}%;"></span>
+                                </span>
+                            </div>
+                        </div>`
+                        );
+
+                    }
+                });
+                $('.circleChart').each(function (value, index) {
+                    var fcolor = $(this).data('fcolor');
+                    $(this).percentcircle({
+                        animate: true,
+                        diameter: 100,
+                        guage: 3,
+                        coverBg: '#fff',
+                        bgColor: '#efefef',
+                        fillColor: fcolor,
+                        percentSize: '18px',
+                        percentWeight: 'normal'
+                    });
+                });
+
+                $("#btnSubmit").click(function () {
+                    $(this).html("Refreshing.....");
+                    $(this).addClass('disabled');
+                    localStorage.clear('selectedFacilityId');
+                    localStorage.setItem('selectedFacilityId', selectedFacilityId);
+                    $("#frmWidget").submit();
+                });
+            }
+
+            // Function to get query parameter value from URL
+            function getQueryParam(param) {
+                var urlParams = new URLSearchParams(window.location.search);
+                return urlParams.get(param);
+            }
+        });
+
+        function getUrlQueryValue() {
+            var vars = [], hash;
+            var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+            for (var i = 0; i < hashes.length; i++) {
+                hash = hashes[i].split('=');
+                vars.push(hash[0]);
+                vars[hash[0]] = hash[1];
+            }
+            return vars;
+        }
+
+        function manageAPIData(keyValue, data) {
+            allFacilityData = data;
+            let priorityLocationIds;
+
+            switch (String(keyValue).toLowerCase()) {
+                case '08DE7908-1606-4081-B924-66D3D90300F8'.toLowerCase():
+                    // change for account University of Wisconsin La Crosse - Murphy Library
+                    // oqDesk Id TSE05763
+                    priorityLocationIds = [7983, 7980, 7972, 7974];
+                    break;
+                default:
+                    break;
+            }
+
+            if (priorityLocationIds) {
+                allFacilityData = restructureData(allFacilityData, priorityLocationIds);
+            }
+
+            return allFacilityData;
+        }
+
+
+        function restructureData(allFacilityData, priorityLocationIds) {
+            const priorityItems = allFacilityData.filter(item =>
+                priorityLocationIds.includes(item.LocationId)
+            );
+
+            const otherItems = allFacilityData.filter(item =>
+                !priorityLocationIds.includes(item.LocationId)
+            );
+
+            priorityItems.sort((a, b) =>
+                priorityLocationIds.indexOf(a.LocationId) - priorityLocationIds.indexOf(b.LocationId)
+            );
+
+            return [...priorityItems, ...otherItems];
+        }
+    </script>
+
+
+
+</body></html>

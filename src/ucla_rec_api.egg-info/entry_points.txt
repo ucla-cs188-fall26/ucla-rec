@@ -1,0 +1,4 @@
+[console_scripts]
+rec-run = rec_scrapers.run:main
+rec-scrape = rec_scrapers.cli:main
+rec-scrape-events = rec_scrapers.events_cli:main
